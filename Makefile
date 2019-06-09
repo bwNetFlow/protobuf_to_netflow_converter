@@ -1,4 +1,4 @@
-path := $(shell find ~ -name "rdkafkacpp.h" 2> /dev/null)
+path := $(shell find / -name "rdkafkacpp.h" 2> /dev/null)
 
 OBJS = main.o flow_enriched.o consumer.o netflow_builder.o anonymization.o input_parser.o
 
