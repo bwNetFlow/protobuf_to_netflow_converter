@@ -4,6 +4,10 @@
 mkdir ~/tmpWorDir
 cd ~/tmpWorDir
 
+
+# Installing Required SSL Package
+sudo apt install -y libssl-dev zlib1g-dev pkg-config
+
 # Installing Kafka (librdkafka) for C/C++
 #wget -qO - https://packages.confluent.io/deb/5.2/archive.key | sudo apt-key add -
 #sudo add-apt-repository "deb [arch=amd64] https://packages.confluent.io/deb/5.2 stable main"
@@ -14,9 +18,6 @@ cd librdkafka
 make
 sudo make install
 cd ..
-
-# Installing Required SSL Package
-#sudo apt install -y libssl-dev zlib1g-dev pkg-config
 
 # Installing Google Protobuf for C/C++
 sudo apt-get -y install autoconf automake libtool curl make g++ unzip
