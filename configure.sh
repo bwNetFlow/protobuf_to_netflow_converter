@@ -6,6 +6,8 @@ cd ~/tmpWorDir
 
 
 # Installing Required SSL Package
+sudo apt update
+sudo apt upgrade -y
 sudo apt install -y libssl-dev zlib1g-dev pkg-config
 
 # Installing Kafka (librdkafka) for C/C++
