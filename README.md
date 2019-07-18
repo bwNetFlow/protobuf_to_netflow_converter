@@ -25,13 +25,13 @@ sudo ./main <path-to-config-file>
 
 The application needs a configuration file as starting parameter. The user must specify the following parameters in this configuration file:
 
-topic: specifys-the-kafka-topic
-user: username
-pwd: pwd belonging to the user
-grp_id: the user specified grp id
-brokers: the kafka brokers to be used
-iface_name: the physical NIC id of the computer running this application, e.g., lo
-dst_ip: the target's ip address
-dst_port: the target's port number
+topic: specifys-the-kafka-topic  
+user: username  
+pwd: pwd belonging to the user  
+grp_id: the user specified grp id  
+brokers: the kafka brokers to be used  
+iface_name: the physical NIC id of the computer running this application, e.g., lo  
+dst_ip: the target's ip address  
+dst_port: the target's port number  
 anonymization: yes or no; yes anonymizes all flow ip addresses according to the HMAC standard
 
