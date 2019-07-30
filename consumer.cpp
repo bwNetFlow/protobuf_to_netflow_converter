@@ -11,11 +11,12 @@ Consumer::Consumer(std::string _username, std::string _password, std::string _gr
     std::string _security_protocol, std::string _sasl_mechanism, std::string _ssl_ca_location, std::string _brokers) 
     : errstr{}, global_conf{RdKafka::Conf::create(RdKafka::Conf::CONF_GLOBAL)},
     topic_conf{RdKafka::Conf::create(RdKafka::Conf::CONF_TOPIC)},
-    consumer{},
+    consumer{}, reb_cb_obj{}, 
     username{_username}, password{_password}, group_id{_group_id}, security_protocol{_security_protocol},
     sasl_mechanism{_sasl_mechanism}, ssl_ca_location{_ssl_ca_location}, 
     brokers{_brokers}, topics{}
     {
+        reb_cb_obj = std::make_shared<CRebalanceCb>();
         std::cout << ">> Consumer " << username << " has been created." << std::endl;
     }
 
@@ -27,6 +28,11 @@ Consumer::~Consumer()
 int 
 Consumer::init_consumer_default()
 {
+    if(global_conf->set("rebalance_cb", reb_cb_obj.get(), errstr) != RdKafka::Conf::CONF_OK) {
+        std::cerr << errstr << std::endl;
+        return -1;
+    }
+
     if(global_conf->set("sasl.username", username, errstr) != RdKafka::Conf::CONF_OK) {
         std::cerr << errstr << std::endl;
         return -1;
@@ -136,4 +142,18 @@ Consumer::close()
 {
     consumer->close();
     return 0;
+}
+
+void 
+Consumer::CRebalanceCb::rebalance_cb (RdKafka::KafkaConsumer *consumer, RdKafka::ErrorCode err,
+    std::vector<RdKafka::TopicPartition*> &partitions)
+{
+    if (err == RdKafka::ERR__ASSIGN_PARTITIONS) {
+        for(auto const& value: partitions) {
+            value->set_offset(RdKafka::Topic::OFFSET_END);
+        }
+        consumer->assign(partitions);
+    } else {
+        consumer->unassign();
+    }
 }

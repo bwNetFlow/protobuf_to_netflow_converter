@@ -34,11 +34,17 @@ class Consumer
 
         int close();
     private:
+        class CRebalanceCb : public RdKafka::RebalanceCb {
+            void rebalance_cb (RdKafka::KafkaConsumer *consumer, RdKafka::ErrorCode err,
+                std::vector<RdKafka::TopicPartition*> &partitions);
+        };
+
         std::string errstr;
 
         std::shared_ptr<RdKafka::Conf> global_conf;
         std::shared_ptr<RdKafka::Conf> topic_conf;
         std::shared_ptr<RdKafka::KafkaConsumer> consumer;
+        std::shared_ptr<CRebalanceCb> reb_cb_obj;
 
         std::string username;
         std::string password;
