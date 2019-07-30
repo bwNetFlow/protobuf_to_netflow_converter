@@ -77,7 +77,8 @@ insert_userInput(std::string keyword, std::string value, user_credentials& input
     } else if(keyword == DESTINATION_IP) {
         input.dst_ip = value; return 1;
     } else if(keyword == DESTINATION_PORT) {
-        input.dst_port = value; return 1;
+        int tmpInt{std::stoi(value)};
+        input.dst_port = tmpInt; return 1;
     } else if(keyword == ANONYMIZATION) {
         input.anonymization = value; return 1;
     } else {

@@ -33,5 +33,8 @@ sudo make install
 sudo ldconfig
 cd ..
 
+# Protobuf header files can be found here:
+# https://github.com/bwNetFlow/protobuf/tree/master/cpp
+
 # Deleting Before Created Directory
 sudo rm -rf ~/tmpWorDir

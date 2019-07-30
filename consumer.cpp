@@ -62,6 +62,11 @@ Consumer::init_consumer_default()
         return -1;
     }
 
+    if(global_conf->set("auto.offset.reset", "smallest", errstr) != RdKafka::Conf::CONF_OK) {
+        std::cerr << errstr << std::endl;
+        return -1;
+    }
+
     if(global_conf->set("default_topic_conf", topic_conf.get(), errstr) != RdKafka::Conf::CONF_OK) {
         std::cerr << errstr << std::endl;
         return -1;
@@ -88,12 +93,34 @@ Consumer::add_topics(const std::vector<std::string>& input)
 int
 Consumer::subscribe()
 {
+    /* EXPERIMENTAL */
+    /*
+    int64_t low, high;
+    RdKafka::HandleImpl exp{};
+    exp.get_watermark_offsets("flow-messages-enriched", 0, &low, &high);
+    std::cout << "LOW: " << low << "; HIGH: " << high << std::endl;
+
+    std::vector<RdKafka::TopicPartition*> partitions;
+    partitions.push_back(RdKafka::TopicPartition::create("flow-messages-enriched", 0, RdKafka::Topic::OFFSET_END));
+    partitions.push_back(RdKafka::TopicPartition::create("flow-messages-enriched", 1, RdKafka::Topic::OFFSET_END));
+    partitions.push_back(RdKafka::TopicPartition::create("flow-messages-enriched", 2, RdKafka::Topic::OFFSET_END));
+    */
+    /* END EXPERIMENTAL */
+    
+    
     RdKafka::ErrorCode err = consumer->subscribe(topics);
     if(err) {
         std::cerr << "Failed to subscribe to " << topics.size() << " topics: "
             << RdKafka::err2str(err) << std::endl;
         return -1;
     }
+    
+    /*
+    consumer->unassign();
+
+    consumer->assign(partitions);
+    consumer->commitAsync();
+    */
     return 0;
 }
 

@@ -59,6 +59,8 @@ Copyright (C) 2019 Leonard Bradatsch (leo.bradatsch@gmail.com)
 #define IP4_HDRLEN 20
 #define UDP_HDRLEN 8
 #define SAMPLERID 1
+#define IPV4 0x0800
+#define IPV6 0x86dd
 
 const uint16_t header_count = NetFlowBuilder{}.get_header_count();
 const uint16_t dataHeader_length = NetFlowBuilder{}.get_dataHeader_length();
@@ -224,6 +226,21 @@ prepare_raw_socket(std::string interface)
 }
 
 uint32_t
+add_timediff()
+{
+    time_t rawtime;
+    struct tm* timeinfo;
+    char buffer[10];
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+    strftime(buffer, sizeof(buffer), "%Z", timeinfo);
+    
+    if(strcmp(buffer, "CEST") >= 0) return 7200000;
+    else if(strcmp(buffer, "CES") >= 0) return 3600000;
+    else return 0;
+}
+
+uint32_t
 calc_sysUptime()
 {
     std::chrono::milliseconds uptime(0u);
@@ -234,6 +251,8 @@ calc_sysUptime()
 
     return uptime.count();
 }
+
+
 
 const std::string 
 get_ca_location()
@@ -255,12 +274,14 @@ read_kafka_input(flowmessageenriched::FlowMessage& flowmsg, kafka_input& kafka_v
 {
     kafka_values.bytes = flowmsg.bytes(); // Value is multiplied by 32 coz the router sampling
     kafka_values.pkts = flowmsg.packets(); // Value is multiplied by 32 coz the router sampling
-    kafka_values.IP4SrcAddr = flowmsg.srcip();
-    kafka_values.IP4DstAddr = flowmsg.dstip();
+    kafka_values.IP4SrcAddr = flowmsg.srcaddr();
+    kafka_values.IP4DstAddr = flowmsg.dstaddr();
     kafka_values.InputSNMP = flowmsg.srcif();
     kafka_values.OutputSNMP = flowmsg.dstif();
-    kafka_values.LastSwitched = flowmsg.timeflowend() + calc_sysUptime() - flowmsg.timerecvd() * 1000;
-    kafka_values.FirstSwitched = flowmsg.timeflowstart() + calc_sysUptime() - flowmsg.timerecvd() * 1000;
+    //kafka_values.LastSwitched = flowmsg.timeflowend() + calc_sysUptime() - flowmsg.timereceived() * 1000;
+    kafka_values.LastSwitched = (flowmsg.timeflowend() * 1000 - std::time(0) * 1000 + calc_sysUptime()) + add_timediff();
+    //kafka_values.FirstSwitched = flowmsg.timeflowstart() + calc_sysUptime() - flowmsg.timereceived() * 1000;
+    kafka_values.FirstSwitched = (flowmsg.timeflowstart() * 1000 - std::time(0) * 1000 + calc_sysUptime()) + add_timediff();
     kafka_values.L4SrcPort = flowmsg.srcport();
     kafka_values.L4DstPort = flowmsg.dstport();
     kafka_values.SrcAS = flowmsg.srcas();
@@ -271,7 +292,7 @@ read_kafka_input(flowmessageenriched::FlowMessage& flowmsg, kafka_input& kafka_v
     kafka_values.Proto = flowmsg.proto();
     kafka_values.TCPFlags = flowmsg.tcpflags();
     kafka_values.IPToS = flowmsg.iptos();
-    kafka_values.Direction = flowmsg.direction();
+    kafka_values.Direction = flowmsg.flowdirection();
     kafka_values.ForwardingStatus = flowmsg.forwardingstatus();
     kafka_values.FlowSamplerID = SAMPLERID;
     kafka_values.IngressVRFID = flowmsg.ingressvrfid(); 
@@ -285,12 +306,14 @@ read_kafka_input_v6(flowmessageenriched::FlowMessage& flowmsg, kafka_input_v6& k
 {
     kafka_values.bytes = flowmsg.bytes(); // Value is multiplied by 32 coz the router sampling
     kafka_values.pkts = flowmsg.packets(); // Value is multiplied by 32 coz the router sampling
-    kafka_values.IP6SrcAddr = flowmsg.srcip();
-    kafka_values.IP6DstAddr = flowmsg.dstip();
+    kafka_values.IP6SrcAddr = flowmsg.srcaddr();
+    kafka_values.IP6DstAddr = flowmsg.dstaddr();
     kafka_values.InputSNMP = flowmsg.srcif();
     kafka_values.OutputSNMP = flowmsg.dstif();
-    kafka_values.FirstSwitched = flowmsg.timeflowstart() + calc_sysUptime() - flowmsg.timerecvd() * 1000;
-    kafka_values.LastSwitched = flowmsg.timeflowend() + calc_sysUptime() - flowmsg.timerecvd() * 1000;
+    //kafka_values.FirstSwitched = flowmsg.timeflowstart() + calc_sysUptime() - flowmsg.timereceived() * 1000;
+    kafka_values.FirstSwitched = (flowmsg.timeflowstart() * 1000 - std::time(0) * 1000 + calc_sysUptime()) + add_timediff();
+    //kafka_values.LastSwitched = flowmsg.timeflowend() + calc_sysUptime() - flowmsg.timereceived() * 1000;
+    kafka_values.LastSwitched = (flowmsg.timeflowend() * 1000 - std::time(0) * 1000 + calc_sysUptime()) + add_timediff();
     kafka_values.FlowLabel = flowmsg.ipv6flowlabel();
     kafka_values.IP6OptionHeaders = 0x00000000; // Not yet supported by goflow SHAME
     kafka_values.L4SrcPort = flowmsg.srcport();
@@ -303,7 +326,7 @@ read_kafka_input_v6(flowmessageenriched::FlowMessage& flowmsg, kafka_input_v6& k
     kafka_values.Proto = flowmsg.proto();
     kafka_values.TCPFlags = flowmsg.tcpflags();
     kafka_values.IPToS = flowmsg.iptos();
-    kafka_values.Direction = flowmsg.direction();
+    kafka_values.Direction = flowmsg.flowdirection();
     kafka_values.ForwardingStatus = flowmsg.forwardingstatus();
     kafka_values.FlowSamplerID = SAMPLERID;
     kafka_values.IngressVRFID = flowmsg.ingressvrfid(); 
@@ -325,7 +348,7 @@ ip4_handler(user_credentials const& usr_cds, std::unordered_map<std::string, Net
     char routerAddr_buf[INET_ADDRSTRLEN];
     std::string raw_routerAddr, printable_routerAddr;
 
-    raw_routerAddr = flowmsg.routeraddr();
+    raw_routerAddr = flowmsg.sampleraddress();
     inet_ntop(AF_INET, raw_routerAddr.c_str(), routerAddr_buf, INET_ADDRSTRLEN);
     printable_routerAddr = routerAddr_buf;
 
@@ -388,7 +411,7 @@ ip6_handler(user_credentials const& usr_cds, std::unordered_map<std::string, Net
     char routerAddr_buf[INET_ADDRSTRLEN];
     std::string raw_routerAddr, printable_routerAddr;
 
-    raw_routerAddr = flowmsg.routeraddr();
+    raw_routerAddr = flowmsg.sampleraddress();
     inet_ntop(AF_INET, raw_routerAddr.c_str(), routerAddr_buf, INET_ADDRSTRLEN);
     printable_routerAddr = routerAddr_buf;
 
@@ -450,7 +473,7 @@ flow_consumer(user_credentials const& usr_cds, std::unordered_map<std::string, N
     }
 
     flowmessageenriched::FlowMessage flowmsg{}; // Contains the actual flow
-    ::flowmessageenriched::FlowMessage_IPType type; // Describes L3 type of the flow
+    uint32_t type; // Describes L3 type of the flow
 
     /* --- EXPERIMENTAL --- */
     while(!signal_caught) {
@@ -463,10 +486,10 @@ flow_consumer(user_credentials const& usr_cds, std::unordered_map<std::string, N
             flowmsg.ParseFromString(tmp_string);
 
             /* --- Sorts all incoming flows on the basis of L3 TYPE --- */
-            type = flowmsg.ipversion();
-            if(type == ::flowmessageenriched::FlowMessage_IPType::FlowMessage_IPType_IPv6) {
+            type = flowmsg.etype();
+            if(type == IPV6) {
                 ip6_handler(usr_cds, inputv6, flowmsg);
-            } else if(type == ::flowmessageenriched::FlowMessage_IPType::FlowMessage_IPType_IPv4) {
+            } else if(type == IPV4) {
                 ip4_handler(usr_cds, input, flowmsg);
                 ;
             } else {
@@ -499,7 +522,7 @@ flow_writer(user_credentials const& usr_cds, std::unordered_map<std::string, Net
                 struct udphdr udp_hdr{};
 
                 if(prepare_ip4_hdr(ip_hdr, it.second.get_packet_size(), it.first, usr_cds.dst_ip) < 0) exit(EXIT_FAILURE);
-                if(prepare_udp_hdr(udp_hdr, 9999, 2055, it.second.get_packet_size()) < 0) exit(EXIT_FAILURE);
+                if(prepare_udp_hdr(udp_hdr, 9999, usr_cds.dst_port, it.second.get_packet_size()) < 0) exit(EXIT_FAILURE);
                 void* packet = pack_packet(ip_hdr, udp_hdr, it.second.get_packet(), it.second.get_packet_size());
                 if(!packet) {
                     std::cerr << "Could not pack packet" << std::endl; exit(EXIT_FAILURE);
@@ -536,7 +559,7 @@ flow_writer_v6(user_credentials const& usr_cds, std::unordered_map<std::string, 
                 struct udphdr udp_hdr{};
 
                 if(prepare_ip4_hdr(ip_hdr, it.second.get_packet_size(), it.first, usr_cds.dst_ip) < 0) exit(EXIT_FAILURE);
-                if(prepare_udp_hdr(udp_hdr, 9999, 2055, it.second.get_packet_size()) < 0) exit(EXIT_FAILURE);
+                if(prepare_udp_hdr(udp_hdr, 9999, usr_cds.dst_port, it.second.get_packet_size()) < 0) exit(EXIT_FAILURE);
                 void* packet = pack_packet(ip_hdr, udp_hdr, it.second.get_packet(), it.second.get_packet_size());
                 if(!packet) {
                     std::cerr << "Could not pack packet" << std::endl; exit(EXIT_FAILURE);

@@ -41,7 +41,7 @@ void InitDefaults_flow_2dmessages_2denriched_2eproto() {
 }
 
 ::google::protobuf::Metadata file_level_metadata_flow_2dmessages_2denriched_2eproto[1];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flow_2dmessages_2denriched_2eproto[4];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flow_2dmessages_2denriched_2eproto[2];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flow_2dmessages_2denriched_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flow_2dmessages_2denriched_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -51,48 +51,49 @@ const ::google::protobuf::uint32 TableStruct_flow_2dmessages_2denriched_2eproto:
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, type_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, timerecvd_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, samplingrate_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, timereceived_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, sequencenum_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, timeflow_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcip_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstip_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, ipversion_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, samplingrate_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, flowdirection_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, sampleraddress_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, timeflowstart_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, timeflowend_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, bytes_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, packets_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, routeraddr_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, nexthop_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, nexthopas_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcas_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstas_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcnet_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstnet_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcif_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstif_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcaddr_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstaddr_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, etype_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, proto_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcport_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstport_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcif_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstif_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcmac_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstmac_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcvlan_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstvlan_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, vlanid_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, ingressvrfid_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, egressvrfid_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, iptos_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, forwardingstatus_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, ipttl_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, tcpflags_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcmac_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstmac_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, vlanid_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, etype_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, icmptype_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, icmpcode_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcvlan_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstvlan_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, ipv6flowlabel_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, ipv6extensionheaders_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, fragmentid_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, fragmentoffset_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, ipv6flowlabel_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, ingressvrfid_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, egressvrfid_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, timeflowstart_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, timeflowend_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, direction_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, biflowdirection_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcas_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstas_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, nexthop_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, nexthopas_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcnet_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstnet_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, cid_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, cidstring_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, normalized_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcifname_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, srcifdesc_),
@@ -100,9 +101,8 @@ const ::google::protobuf::uint32 TableStruct_flow_2dmessages_2denriched_2eproto:
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstifname_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstifdesc_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, dstifspeed_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, peer_),
-  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, remotecountry_),
   PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, protoname_),
+  PROTOBUF_FIELD_OFFSET(::flowmessageenriched::FlowMessage, remotecountry_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flowmessageenriched::FlowMessage)},
@@ -120,46 +120,44 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flow_2dmessages_2denriched_2eproto[] =
   "\n\034flow-messages-enriched.proto\022\023flowmess"
-  "ageenriched\"\306\n\n\013FlowMessage\0227\n\004Type\030\001 \001("
+  "ageenriched\"\317\t\n\013FlowMessage\0227\n\004Type\030\001 \001("
   "\0162).flowmessageenriched.FlowMessage.Flow"
-  "Type\022\021\n\tTimeRecvd\030\002 \001(\004\022\024\n\014SamplingRate\030"
-  "\003 \001(\004\022\023\n\013SequenceNum\030\004 \001(\r\022\020\n\010TimeFlow\030\005"
-  " \001(\004\022\r\n\005SrcIP\030\006 \001(\014\022\r\n\005DstIP\030\007 \001(\014\022:\n\tIP"
-  "version\030\010 \001(\0162\'.flowmessageenriched.Flow"
-  "Message.IPType\022\r\n\005Bytes\030\t \001(\004\022\017\n\007Packets"
-  "\030\n \001(\004\022\022\n\nRouterAddr\030\013 \001(\014\022\017\n\007NextHop\030\014 "
-  "\001(\014\022\021\n\tNextHopAS\030\r \001(\r\022\r\n\005SrcAS\030\016 \001(\r\022\r\n"
-  "\005DstAS\030\017 \001(\r\022\016\n\006SrcNet\030\020 \001(\r\022\016\n\006DstNet\030\021"
-  " \001(\r\022\r\n\005SrcIf\030\022 \001(\r\022\r\n\005DstIf\030\023 \001(\r\022\r\n\005Pr"
-  "oto\030\024 \001(\r\022\017\n\007SrcPort\030\025 \001(\r\022\017\n\007DstPort\030\026 "
-  "\001(\r\022\r\n\005IPTos\030\027 \001(\r\022\030\n\020ForwardingStatus\030\030"
-  " \001(\r\022\r\n\005IPTTL\030\031 \001(\r\022\020\n\010TCPFlags\030\032 \001(\r\022\016\n"
-  "\006SrcMac\030\033 \001(\004\022\016\n\006DstMac\030\034 \001(\004\022\016\n\006VlanId\030"
-  "\035 \001(\r\022\r\n\005Etype\030\036 \001(\r\022\020\n\010IcmpType\030\037 \001(\r\022\020"
-  "\n\010IcmpCode\030  \001(\r\022\017\n\007SrcVlan\030! \001(\r\022\017\n\007Dst"
-  "Vlan\030\" \001(\r\022\022\n\nFragmentId\030# \001(\r\022\026\n\016Fragme"
-  "ntOffset\030$ \001(\r\022\025\n\rIPv6FlowLabel\030% \001(\r\022\024\n"
-  "\014IngressVrfId\030& \001(\r\022\023\n\013EgressVrfId\030\' \001(\r"
-  "\022\025\n\rTimeFlowStart\030( \001(\004\022\023\n\013TimeFlowEnd\030)"
-  " \001(\004\022A\n\tDirection\030Z \001(\0162..flowmessageenr"
-  "iched.FlowMessage.DirectionType\022\013\n\003Cid\030["
-  " \001(\r\022C\n\nNormalized\030\\ \001(\0162/.flowmessageen"
-  "riched.FlowMessage.NormalizedType\022\021\n\tSrc"
-  "IfName\030] \001(\t\022\021\n\tSrcIfDesc\030^ \001(\t\022\022\n\nSrcIf"
-  "Speed\030_ \001(\r\022\021\n\tDstIfName\030` \001(\t\022\021\n\tDstIfD"
-  "esc\030a \001(\t\022\022\n\nDstIfSpeed\030b \001(\r\022\014\n\004Peer\030c "
-  "\001(\t\022\025\n\rRemoteCountry\030d \001(\t\022\021\n\tProtoName\030"
-  "e \001(\t\";\n\010FlowType\022\017\n\013FLOWUNKNOWN\020\000\022\010\n\004NF"
-  "V9\020\t\022\t\n\005IPFIX\020\n\022\t\n\005SFLOW\020\005\"+\n\006IPType\022\r\n\t"
-  "IPUNKNOWN\020\000\022\010\n\004IPv4\020\004\022\010\n\004IPv6\020\006\"8\n\rDirec"
-  "tionType\022\013\n\007Unknown\020\000\022\014\n\010Incoming\020\001\022\014\n\010O"
-  "utgoing\020\002\"!\n\016NormalizedType\022\006\n\002No\020\000\022\007\n\003Y"
-  "es\020\001B\032\n\tbwnetflowB\rFlowMessagePbb\006proto3"
+  "Type\022\024\n\014TimeReceived\030\002 \001(\004\022\023\n\013SequenceNu"
+  "m\030\004 \001(\r\022\024\n\014SamplingRate\030\003 \001(\004\022\025\n\rFlowDir"
+  "ection\030* \001(\r\022\026\n\016SamplerAddress\030\013 \001(\014\022\025\n\r"
+  "TimeFlowStart\030& \001(\004\022\023\n\013TimeFlowEnd\030\005 \001(\004"
+  "\022\r\n\005Bytes\030\t \001(\004\022\017\n\007Packets\030\n \001(\004\022\017\n\007SrcA"
+  "ddr\030\006 \001(\014\022\017\n\007DstAddr\030\007 \001(\014\022\r\n\005Etype\030\036 \001("
+  "\r\022\r\n\005Proto\030\024 \001(\r\022\017\n\007SrcPort\030\025 \001(\r\022\017\n\007Dst"
+  "Port\030\026 \001(\r\022\r\n\005SrcIf\030\022 \001(\r\022\r\n\005DstIf\030\023 \001(\r"
+  "\022\016\n\006SrcMac\030\033 \001(\004\022\016\n\006DstMac\030\034 \001(\004\022\017\n\007SrcV"
+  "lan\030! \001(\r\022\017\n\007DstVlan\030\" \001(\r\022\016\n\006VlanId\030\035 \001"
+  "(\r\022\024\n\014IngressVrfID\030\' \001(\r\022\023\n\013EgressVrfID\030"
+  "( \001(\r\022\r\n\005IPTos\030\027 \001(\r\022\030\n\020ForwardingStatus"
+  "\030\030 \001(\r\022\r\n\005IPTTL\030\031 \001(\r\022\020\n\010TCPFlags\030\032 \001(\r\022"
+  "\020\n\010IcmpType\030\037 \001(\r\022\020\n\010IcmpCode\030  \001(\r\022\025\n\rI"
+  "Pv6FlowLabel\030% \001(\r\022\034\n\024IPv6ExtensionHeade"
+  "rs\030+ \001(\r\022\022\n\nFragmentId\030# \001(\r\022\026\n\016Fragment"
+  "Offset\030$ \001(\r\022\027\n\017BiFlowDirection\030) \001(\r\022\r\n"
+  "\005SrcAS\030\016 \001(\r\022\r\n\005DstAS\030\017 \001(\r\022\017\n\007NextHop\030\014"
+  " \001(\014\022\021\n\tNextHopAS\030\r \001(\r\022\016\n\006SrcNet\030\020 \001(\r\022"
+  "\016\n\006DstNet\030\021 \001(\r\022\014\n\003Cid\030\350\007 \001(\r\022\022\n\tCidStri"
+  "ng\030\351\007 \001(\t\022D\n\nNormalized\030\352\007 \001(\0162/.flowmes"
+  "sageenriched.FlowMessage.NormalizedType\022"
+  "\022\n\tSrcIfName\030\353\007 \001(\t\022\022\n\tSrcIfDesc\030\354\007 \001(\t\022"
+  "\023\n\nSrcIfSpeed\030\355\007 \001(\r\022\022\n\tDstIfName\030\356\007 \001(\t"
+  "\022\022\n\tDstIfDesc\030\357\007 \001(\t\022\023\n\nDstIfSpeed\030\360\007 \001("
+  "\r\022\022\n\tProtoName\030\361\007 \001(\t\022\026\n\rRemoteCountry\030\362"
+  "\007 \001(\t\"S\n\010FlowType\022\017\n\013FLOWUNKNOWN\020\000\022\013\n\007SF"
+  "LOW_5\020\001\022\016\n\nNETFLOW_V5\020\002\022\016\n\nNETFLOW_V9\020\003\022"
+  "\t\n\005IPFIX\020\004\"!\n\016NormalizedType\022\006\n\002No\020\000\022\007\n\003"
+  "Yes\020\001B\"\n\tbwnetflowB\025FlowMessageEnrichedP"
+  "bb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flow_2dmessages_2denriched_2eproto = {
   false, InitDefaults_flow_2dmessages_2denriched_2eproto, 
   descriptor_table_protodef_flow_2dmessages_2denriched_2eproto,
-  "flow-messages-enriched.proto", &assign_descriptors_table_flow_2dmessages_2denriched_2eproto, 1440,
+  "flow-messages-enriched.proto", &assign_descriptors_table_flow_2dmessages_2denriched_2eproto, 1329,
 };
 
 void AddDescriptors_flow_2dmessages_2denriched_2eproto() {
@@ -179,9 +177,10 @@ const ::google::protobuf::EnumDescriptor* FlowMessage_FlowType_descriptor() {
 bool FlowMessage_FlowType_IsValid(int value) {
   switch (value) {
     case 0:
-    case 5:
-    case 9:
-    case 10:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
       return true;
     default:
       return false;
@@ -190,62 +189,17 @@ bool FlowMessage_FlowType_IsValid(int value) {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const FlowMessage_FlowType FlowMessage::FLOWUNKNOWN;
-const FlowMessage_FlowType FlowMessage::NFV9;
+const FlowMessage_FlowType FlowMessage::SFLOW_5;
+const FlowMessage_FlowType FlowMessage::NETFLOW_V5;
+const FlowMessage_FlowType FlowMessage::NETFLOW_V9;
 const FlowMessage_FlowType FlowMessage::IPFIX;
-const FlowMessage_FlowType FlowMessage::SFLOW;
 const FlowMessage_FlowType FlowMessage::FlowType_MIN;
 const FlowMessage_FlowType FlowMessage::FlowType_MAX;
 const int FlowMessage::FlowType_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* FlowMessage_IPType_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flow_2dmessages_2denriched_2eproto);
-  return file_level_enum_descriptors_flow_2dmessages_2denriched_2eproto[1];
-}
-bool FlowMessage_IPType_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 4:
-    case 6:
-      return true;
-    default:
-      return false;
-  }
-}
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const FlowMessage_IPType FlowMessage::IPUNKNOWN;
-const FlowMessage_IPType FlowMessage::IPv4;
-const FlowMessage_IPType FlowMessage::IPv6;
-const FlowMessage_IPType FlowMessage::IPType_MIN;
-const FlowMessage_IPType FlowMessage::IPType_MAX;
-const int FlowMessage::IPType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* FlowMessage_DirectionType_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flow_2dmessages_2denriched_2eproto);
-  return file_level_enum_descriptors_flow_2dmessages_2denriched_2eproto[2];
-}
-bool FlowMessage_DirectionType_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-    case 2:
-      return true;
-    default:
-      return false;
-  }
-}
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const FlowMessage_DirectionType FlowMessage::Unknown;
-const FlowMessage_DirectionType FlowMessage::Incoming;
-const FlowMessage_DirectionType FlowMessage::Outgoing;
-const FlowMessage_DirectionType FlowMessage::DirectionType_MIN;
-const FlowMessage_DirectionType FlowMessage::DirectionType_MAX;
-const int FlowMessage::DirectionType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 const ::google::protobuf::EnumDescriptor* FlowMessage_NormalizedType_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flow_2dmessages_2denriched_2eproto);
-  return file_level_enum_descriptors_flow_2dmessages_2denriched_2eproto[3];
+  return file_level_enum_descriptors_flow_2dmessages_2denriched_2eproto[1];
 }
 bool FlowMessage_NormalizedType_IsValid(int value) {
   switch (value) {
@@ -275,48 +229,49 @@ class FlowMessage::HasBitSetters {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int FlowMessage::kTypeFieldNumber;
-const int FlowMessage::kTimeRecvdFieldNumber;
-const int FlowMessage::kSamplingRateFieldNumber;
+const int FlowMessage::kTimeReceivedFieldNumber;
 const int FlowMessage::kSequenceNumFieldNumber;
-const int FlowMessage::kTimeFlowFieldNumber;
-const int FlowMessage::kSrcIPFieldNumber;
-const int FlowMessage::kDstIPFieldNumber;
-const int FlowMessage::kIPversionFieldNumber;
+const int FlowMessage::kSamplingRateFieldNumber;
+const int FlowMessage::kFlowDirectionFieldNumber;
+const int FlowMessage::kSamplerAddressFieldNumber;
+const int FlowMessage::kTimeFlowStartFieldNumber;
+const int FlowMessage::kTimeFlowEndFieldNumber;
 const int FlowMessage::kBytesFieldNumber;
 const int FlowMessage::kPacketsFieldNumber;
-const int FlowMessage::kRouterAddrFieldNumber;
-const int FlowMessage::kNextHopFieldNumber;
-const int FlowMessage::kNextHopASFieldNumber;
-const int FlowMessage::kSrcASFieldNumber;
-const int FlowMessage::kDstASFieldNumber;
-const int FlowMessage::kSrcNetFieldNumber;
-const int FlowMessage::kDstNetFieldNumber;
-const int FlowMessage::kSrcIfFieldNumber;
-const int FlowMessage::kDstIfFieldNumber;
+const int FlowMessage::kSrcAddrFieldNumber;
+const int FlowMessage::kDstAddrFieldNumber;
+const int FlowMessage::kEtypeFieldNumber;
 const int FlowMessage::kProtoFieldNumber;
 const int FlowMessage::kSrcPortFieldNumber;
 const int FlowMessage::kDstPortFieldNumber;
+const int FlowMessage::kSrcIfFieldNumber;
+const int FlowMessage::kDstIfFieldNumber;
+const int FlowMessage::kSrcMacFieldNumber;
+const int FlowMessage::kDstMacFieldNumber;
+const int FlowMessage::kSrcVlanFieldNumber;
+const int FlowMessage::kDstVlanFieldNumber;
+const int FlowMessage::kVlanIdFieldNumber;
+const int FlowMessage::kIngressVrfIDFieldNumber;
+const int FlowMessage::kEgressVrfIDFieldNumber;
 const int FlowMessage::kIPTosFieldNumber;
 const int FlowMessage::kForwardingStatusFieldNumber;
 const int FlowMessage::kIPTTLFieldNumber;
 const int FlowMessage::kTCPFlagsFieldNumber;
-const int FlowMessage::kSrcMacFieldNumber;
-const int FlowMessage::kDstMacFieldNumber;
-const int FlowMessage::kVlanIdFieldNumber;
-const int FlowMessage::kEtypeFieldNumber;
 const int FlowMessage::kIcmpTypeFieldNumber;
 const int FlowMessage::kIcmpCodeFieldNumber;
-const int FlowMessage::kSrcVlanFieldNumber;
-const int FlowMessage::kDstVlanFieldNumber;
+const int FlowMessage::kIPv6FlowLabelFieldNumber;
+const int FlowMessage::kIPv6ExtensionHeadersFieldNumber;
 const int FlowMessage::kFragmentIdFieldNumber;
 const int FlowMessage::kFragmentOffsetFieldNumber;
-const int FlowMessage::kIPv6FlowLabelFieldNumber;
-const int FlowMessage::kIngressVrfIdFieldNumber;
-const int FlowMessage::kEgressVrfIdFieldNumber;
-const int FlowMessage::kTimeFlowStartFieldNumber;
-const int FlowMessage::kTimeFlowEndFieldNumber;
-const int FlowMessage::kDirectionFieldNumber;
+const int FlowMessage::kBiFlowDirectionFieldNumber;
+const int FlowMessage::kSrcASFieldNumber;
+const int FlowMessage::kDstASFieldNumber;
+const int FlowMessage::kNextHopFieldNumber;
+const int FlowMessage::kNextHopASFieldNumber;
+const int FlowMessage::kSrcNetFieldNumber;
+const int FlowMessage::kDstNetFieldNumber;
 const int FlowMessage::kCidFieldNumber;
+const int FlowMessage::kCidStringFieldNumber;
 const int FlowMessage::kNormalizedFieldNumber;
 const int FlowMessage::kSrcIfNameFieldNumber;
 const int FlowMessage::kSrcIfDescFieldNumber;
@@ -324,9 +279,8 @@ const int FlowMessage::kSrcIfSpeedFieldNumber;
 const int FlowMessage::kDstIfNameFieldNumber;
 const int FlowMessage::kDstIfDescFieldNumber;
 const int FlowMessage::kDstIfSpeedFieldNumber;
-const int FlowMessage::kPeerFieldNumber;
-const int FlowMessage::kRemoteCountryFieldNumber;
 const int FlowMessage::kProtoNameFieldNumber;
+const int FlowMessage::kRemoteCountryFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 FlowMessage::FlowMessage()
@@ -338,21 +292,25 @@ FlowMessage::FlowMessage(const FlowMessage& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  srcip_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.srcip().size() > 0) {
-    srcip_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.srcip_);
+  srcaddr_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.srcaddr().size() > 0) {
+    srcaddr_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.srcaddr_);
   }
-  dstip_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.dstip().size() > 0) {
-    dstip_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dstip_);
+  dstaddr_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.dstaddr().size() > 0) {
+    dstaddr_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dstaddr_);
   }
-  routeraddr_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.routeraddr().size() > 0) {
-    routeraddr_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.routeraddr_);
+  sampleraddress_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.sampleraddress().size() > 0) {
+    sampleraddress_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sampleraddress_);
   }
   nexthop_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.nexthop().size() > 0) {
     nexthop_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nexthop_);
+  }
+  cidstring_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.cidstring().size() > 0) {
+    cidstring_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cidstring_);
   }
   srcifname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.srcifname().size() > 0) {
@@ -370,41 +328,37 @@ FlowMessage::FlowMessage(const FlowMessage& from)
   if (from.dstifdesc().size() > 0) {
     dstifdesc_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dstifdesc_);
   }
-  peer_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.peer().size() > 0) {
-    peer_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.peer_);
+  protoname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.protoname().size() > 0) {
+    protoname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.protoname_);
   }
   remotecountry_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.remotecountry().size() > 0) {
     remotecountry_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.remotecountry_);
   }
-  protoname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.protoname().size() > 0) {
-    protoname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.protoname_);
-  }
-  ::memcpy(&timerecvd_, &from.timerecvd_,
-    static_cast<size_t>(reinterpret_cast<char*>(&srcifspeed_) -
-    reinterpret_cast<char*>(&timerecvd_)) + sizeof(srcifspeed_));
+  ::memcpy(&timereceived_, &from.timereceived_,
+    static_cast<size_t>(reinterpret_cast<char*>(&dstifspeed_) -
+    reinterpret_cast<char*>(&timereceived_)) + sizeof(dstifspeed_));
   // @@protoc_insertion_point(copy_constructor:flowmessageenriched.FlowMessage)
 }
 
 void FlowMessage::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_FlowMessage_flow_2dmessages_2denriched_2eproto.base);
-  srcip_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  dstip_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  routeraddr_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  srcaddr_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  dstaddr_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sampleraddress_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   nexthop_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  cidstring_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   srcifname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   srcifdesc_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   dstifname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   dstifdesc_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  peer_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  remotecountry_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   protoname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&timerecvd_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&srcifspeed_) -
-      reinterpret_cast<char*>(&timerecvd_)) + sizeof(srcifspeed_));
+  remotecountry_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&timereceived_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&dstifspeed_) -
+      reinterpret_cast<char*>(&timereceived_)) + sizeof(dstifspeed_));
 }
 
 FlowMessage::~FlowMessage() {
@@ -413,17 +367,17 @@ FlowMessage::~FlowMessage() {
 }
 
 void FlowMessage::SharedDtor() {
-  srcip_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  dstip_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  routeraddr_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  srcaddr_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  dstaddr_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sampleraddress_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   nexthop_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  cidstring_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   srcifname_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   srcifdesc_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   dstifname_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   dstifdesc_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  peer_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  remotecountry_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   protoname_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  remotecountry_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void FlowMessage::SetCachedSize(int size) const {
@@ -441,20 +395,20 @@ void FlowMessage::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  srcip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  dstip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  routeraddr_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  srcaddr_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  dstaddr_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sampleraddress_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   nexthop_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  cidstring_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   srcifname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   srcifdesc_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   dstifname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   dstifdesc_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  peer_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  remotecountry_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   protoname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&timerecvd_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&srcifspeed_) -
-      reinterpret_cast<char*>(&timerecvd_)) + sizeof(srcifspeed_));
+  remotecountry_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&timereceived_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&dstifspeed_) -
+      reinterpret_cast<char*>(&timereceived_)) + sizeof(dstifspeed_));
   _internal_metadata_.Clear();
 }
 
@@ -479,10 +433,10 @@ const char* FlowMessage::_InternalParse(const char* begin, const char* end, void
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // uint64 TimeRecvd = 2;
+      // uint64 TimeReceived = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        msg->set_timerecvd(::google::protobuf::internal::ReadVarint(&ptr));
+        msg->set_timereceived(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -500,19 +454,19 @@ const char* FlowMessage::_InternalParse(const char* begin, const char* end, void
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // uint64 TimeFlow = 5;
+      // uint64 TimeFlowEnd = 5;
       case 5: {
         if (static_cast<::google::protobuf::uint8>(tag) != 40) goto handle_unusual;
-        msg->set_timeflow(::google::protobuf::internal::ReadVarint(&ptr));
+        msg->set_timeflowend(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // bytes SrcIP = 6;
+      // bytes SrcAddr = 6;
       case 6: {
         if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        object = msg->mutable_srcip();
+        object = msg->mutable_srcaddr();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParser;
           goto string_till_end;
@@ -522,12 +476,12 @@ const char* FlowMessage::_InternalParse(const char* begin, const char* end, void
         ptr += size;
         break;
       }
-      // bytes DstIP = 7;
+      // bytes DstAddr = 7;
       case 7: {
         if (static_cast<::google::protobuf::uint8>(tag) != 58) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        object = msg->mutable_dstip();
+        object = msg->mutable_dstaddr();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParser;
           goto string_till_end;
@@ -535,14 +489,6 @@ const char* FlowMessage::_InternalParse(const char* begin, const char* end, void
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheck(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
-        break;
-      }
-      // .flowmessageenriched.FlowMessage.IPType IPversion = 8;
-      case 8: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 64) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_ipversion(static_cast<::flowmessageenriched::FlowMessage_IPType>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       // uint64 Bytes = 9;
@@ -559,12 +505,12 @@ const char* FlowMessage::_InternalParse(const char* begin, const char* end, void
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // bytes RouterAddr = 11;
+      // bytes SamplerAddress = 11;
       case 11: {
         if (static_cast<::google::protobuf::uint8>(tag) != 90) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        object = msg->mutable_routeraddr();
+        object = msg->mutable_sampleraddress();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParser;
           goto string_till_end;
@@ -764,60 +710,82 @@ const char* FlowMessage::_InternalParse(const char* begin, const char* end, void
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // uint32 IngressVrfId = 38;
+      // uint64 TimeFlowStart = 38;
       case 38: {
         if (static_cast<::google::protobuf::uint8>(tag) != 48) goto handle_unusual;
-        msg->set_ingressvrfid(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      // uint32 EgressVrfId = 39;
-      case 39: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 56) goto handle_unusual;
-        msg->set_egressvrfid(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      // uint64 TimeFlowStart = 40;
-      case 40: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 64) goto handle_unusual;
         msg->set_timeflowstart(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // uint64 TimeFlowEnd = 41;
+      // uint32 IngressVrfID = 39;
+      case 39: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 56) goto handle_unusual;
+        msg->set_ingressvrfid(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // uint32 EgressVrfID = 40;
+      case 40: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 64) goto handle_unusual;
+        msg->set_egressvrfid(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // uint32 BiFlowDirection = 41;
       case 41: {
         if (static_cast<::google::protobuf::uint8>(tag) != 72) goto handle_unusual;
-        msg->set_timeflowend(::google::protobuf::internal::ReadVarint(&ptr));
+        msg->set_biflowdirection(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .flowmessageenriched.FlowMessage.DirectionType Direction = 90;
-      case 90: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 208) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_direction(static_cast<::flowmessageenriched::FlowMessage_DirectionType>(val));
+      // uint32 FlowDirection = 42;
+      case 42: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 80) goto handle_unusual;
+        msg->set_flowdirection(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // uint32 Cid = 91;
-      case 91: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 216) goto handle_unusual;
+      // uint32 IPv6ExtensionHeaders = 43;
+      case 43: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 88) goto handle_unusual;
+        msg->set_ipv6extensionheaders(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // uint32 Cid = 1000;
+      case 1000: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 64) goto handle_unusual;
         msg->set_cid(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .flowmessageenriched.FlowMessage.NormalizedType Normalized = 92;
-      case 92: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 224) goto handle_unusual;
+      // string CidString = 1001;
+      case 1001: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 74) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flowmessageenriched.FlowMessage.CidString");
+        object = msg->mutable_cidstring();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // .flowmessageenriched.FlowMessage.NormalizedType Normalized = 1002;
+      case 1002: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 80) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
         msg->set_normalized(static_cast<::flowmessageenriched::FlowMessage_NormalizedType>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // string SrcIfName = 93;
-      case 93: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 234) goto handle_unusual;
+      // string SrcIfName = 1003;
+      case 1003: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 90) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flowmessageenriched.FlowMessage.SrcIfName");
@@ -831,9 +799,9 @@ const char* FlowMessage::_InternalParse(const char* begin, const char* end, void
         ptr += size;
         break;
       }
-      // string SrcIfDesc = 94;
-      case 94: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 242) goto handle_unusual;
+      // string SrcIfDesc = 1004;
+      case 1004: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 98) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flowmessageenriched.FlowMessage.SrcIfDesc");
@@ -847,16 +815,16 @@ const char* FlowMessage::_InternalParse(const char* begin, const char* end, void
         ptr += size;
         break;
       }
-      // uint32 SrcIfSpeed = 95;
-      case 95: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 248) goto handle_unusual;
+      // uint32 SrcIfSpeed = 1005;
+      case 1005: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 104) goto handle_unusual;
         msg->set_srcifspeed(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // string DstIfName = 96;
-      case 96: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 2) goto handle_unusual;
+      // string DstIfName = 1006;
+      case 1006: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 114) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flowmessageenriched.FlowMessage.DstIfName");
@@ -870,9 +838,9 @@ const char* FlowMessage::_InternalParse(const char* begin, const char* end, void
         ptr += size;
         break;
       }
-      // string DstIfDesc = 97;
-      case 97: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+      // string DstIfDesc = 1007;
+      case 1007: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 122) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flowmessageenriched.FlowMessage.DstIfDesc");
@@ -886,52 +854,36 @@ const char* FlowMessage::_InternalParse(const char* begin, const char* end, void
         ptr += size;
         break;
       }
-      // uint32 DstIfSpeed = 98;
-      case 98: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+      // uint32 DstIfSpeed = 1008;
+      case 1008: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 128) goto handle_unusual;
         msg->set_dstifspeed(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // string Peer = 99;
-      case 99: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flowmessageenriched.FlowMessage.Peer");
-        object = msg->mutable_peer();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string RemoteCountry = 100;
-      case 100: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flowmessageenriched.FlowMessage.RemoteCountry");
-        object = msg->mutable_remotecountry();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string ProtoName = 101;
-      case 101: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+      // string ProtoName = 1009;
+      case 1009: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 138) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flowmessageenriched.FlowMessage.ProtoName");
         object = msg->mutable_protoname();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // string RemoteCountry = 1010;
+      case 1010: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 146) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flowmessageenriched.FlowMessage.RemoteCountry");
+        object = msg->mutable_remotecountry();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -989,13 +941,13 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // uint64 TimeRecvd = 2;
+      // uint64 TimeReceived = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &timerecvd_)));
+                 input, &timereceived_)));
         } else {
           goto handle_unusual;
         }
@@ -1028,49 +980,35 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // uint64 TimeFlow = 5;
+      // uint64 TimeFlowEnd = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (40 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &timeflow_)));
+                 input, &timeflowend_)));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // bytes SrcIP = 6;
+      // bytes SrcAddr = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_srcip()));
+                input, this->mutable_srcaddr()));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // bytes DstIP = 7;
+      // bytes DstAddr = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (58 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_dstip()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flowmessageenriched.FlowMessage.IPType IPversion = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (64 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_ipversion(static_cast< ::flowmessageenriched::FlowMessage_IPType >(value));
+                input, this->mutable_dstaddr()));
         } else {
           goto handle_unusual;
         }
@@ -1103,11 +1041,11 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // bytes RouterAddr = 11;
+      // bytes SamplerAddress = 11;
       case 11: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (90 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_routeraddr()));
+                input, this->mutable_sampleraddress()));
         } else {
           goto handle_unusual;
         }
@@ -1450,35 +1388,9 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 IngressVrfId = 38;
+      // uint64 TimeFlowStart = 38;
       case 38: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (304 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &ingressvrfid_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint32 EgressVrfId = 39;
-      case 39: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (312 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &egressvrfid_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint64 TimeFlowStart = 40;
-      case 40: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (320 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
@@ -1489,36 +1401,74 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // uint64 TimeFlowEnd = 41;
+      // uint32 IngressVrfID = 39;
+      case 39: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (312 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ingressvrfid_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint32 EgressVrfID = 40;
+      case 40: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (320 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &egressvrfid_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint32 BiFlowDirection = 41;
       case 41: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (328 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &timeflowend_)));
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &biflowdirection_)));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // .flowmessageenriched.FlowMessage.DirectionType Direction = 90;
-      case 90: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (720 & 0xFF)) {
-          int value = 0;
+      // uint32 FlowDirection = 42;
+      case 42: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (336 & 0xFF)) {
+
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_direction(static_cast< ::flowmessageenriched::FlowMessage_DirectionType >(value));
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &flowdirection_)));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // uint32 Cid = 91;
-      case 91: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (728 & 0xFF)) {
+      // uint32 IPv6ExtensionHeaders = 43;
+      case 43: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (344 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ipv6extensionheaders_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint32 Cid = 1000;
+      case 1000: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8000 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
@@ -1529,9 +1479,24 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // .flowmessageenriched.FlowMessage.NormalizedType Normalized = 92;
-      case 92: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (736 & 0xFF)) {
+      // string CidString = 1001;
+      case 1001: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8010 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_cidstring()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->cidstring().data(), static_cast<int>(this->cidstring().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flowmessageenriched.FlowMessage.CidString"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flowmessageenriched.FlowMessage.NormalizedType Normalized = 1002;
+      case 1002: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8016 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
@@ -1543,9 +1508,9 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // string SrcIfName = 93;
-      case 93: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (746 & 0xFF)) {
+      // string SrcIfName = 1003;
+      case 1003: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8026 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_srcifname()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1558,9 +1523,9 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // string SrcIfDesc = 94;
-      case 94: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (754 & 0xFF)) {
+      // string SrcIfDesc = 1004;
+      case 1004: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8034 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_srcifdesc()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1573,9 +1538,9 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 SrcIfSpeed = 95;
-      case 95: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (760 & 0xFF)) {
+      // uint32 SrcIfSpeed = 1005;
+      case 1005: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8040 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
@@ -1586,9 +1551,9 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // string DstIfName = 96;
-      case 96: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (770 & 0xFF)) {
+      // string DstIfName = 1006;
+      case 1006: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8050 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_dstifname()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1601,9 +1566,9 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // string DstIfDesc = 97;
-      case 97: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (778 & 0xFF)) {
+      // string DstIfDesc = 1007;
+      case 1007: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8058 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_dstifdesc()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1616,9 +1581,9 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 DstIfSpeed = 98;
-      case 98: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (784 & 0xFF)) {
+      // uint32 DstIfSpeed = 1008;
+      case 1008: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8064 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
@@ -1629,45 +1594,30 @@ bool FlowMessage::MergePartialFromCodedStream(
         break;
       }
 
-      // string Peer = 99;
-      case 99: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (794 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_peer()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->peer().data(), static_cast<int>(this->peer().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flowmessageenriched.FlowMessage.Peer"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string RemoteCountry = 100;
-      case 100: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (802 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_remotecountry()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->remotecountry().data(), static_cast<int>(this->remotecountry().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flowmessageenriched.FlowMessage.RemoteCountry"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string ProtoName = 101;
-      case 101: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (810 & 0xFF)) {
+      // string ProtoName = 1009;
+      case 1009: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8074 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_protoname()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->protoname().data(), static_cast<int>(this->protoname().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "flowmessageenriched.FlowMessage.ProtoName"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string RemoteCountry = 1010;
+      case 1010: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8082 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_remotecountry()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->remotecountry().data(), static_cast<int>(this->remotecountry().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flowmessageenriched.FlowMessage.RemoteCountry"));
         } else {
           goto handle_unusual;
         }
@@ -1707,9 +1657,9 @@ void FlowMessage::SerializeWithCachedSizes(
       1, this->type(), output);
   }
 
-  // uint64 TimeRecvd = 2;
-  if (this->timerecvd() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->timerecvd(), output);
+  // uint64 TimeReceived = 2;
+  if (this->timereceived() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->timereceived(), output);
   }
 
   // uint64 SamplingRate = 3;
@@ -1722,27 +1672,21 @@ void FlowMessage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->sequencenum(), output);
   }
 
-  // uint64 TimeFlow = 5;
-  if (this->timeflow() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->timeflow(), output);
+  // uint64 TimeFlowEnd = 5;
+  if (this->timeflowend() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->timeflowend(), output);
   }
 
-  // bytes SrcIP = 6;
-  if (this->srcip().size() > 0) {
+  // bytes SrcAddr = 6;
+  if (this->srcaddr().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      6, this->srcip(), output);
+      6, this->srcaddr(), output);
   }
 
-  // bytes DstIP = 7;
-  if (this->dstip().size() > 0) {
+  // bytes DstAddr = 7;
+  if (this->dstaddr().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      7, this->dstip(), output);
-  }
-
-  // .flowmessageenriched.FlowMessage.IPType IPversion = 8;
-  if (this->ipversion() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      8, this->ipversion(), output);
+      7, this->dstaddr(), output);
   }
 
   // uint64 Bytes = 9;
@@ -1755,10 +1699,10 @@ void FlowMessage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(10, this->packets(), output);
   }
 
-  // bytes RouterAddr = 11;
-  if (this->routeraddr().size() > 0) {
+  // bytes SamplerAddress = 11;
+  if (this->sampleraddress().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      11, this->routeraddr(), output);
+      11, this->sampleraddress(), output);
   }
 
   // bytes NextHop = 12;
@@ -1892,121 +1836,125 @@ void FlowMessage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(37, this->ipv6flowlabel(), output);
   }
 
-  // uint32 IngressVrfId = 38;
-  if (this->ingressvrfid() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(38, this->ingressvrfid(), output);
-  }
-
-  // uint32 EgressVrfId = 39;
-  if (this->egressvrfid() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(39, this->egressvrfid(), output);
-  }
-
-  // uint64 TimeFlowStart = 40;
+  // uint64 TimeFlowStart = 38;
   if (this->timeflowstart() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(40, this->timeflowstart(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(38, this->timeflowstart(), output);
   }
 
-  // uint64 TimeFlowEnd = 41;
-  if (this->timeflowend() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(41, this->timeflowend(), output);
+  // uint32 IngressVrfID = 39;
+  if (this->ingressvrfid() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(39, this->ingressvrfid(), output);
   }
 
-  // .flowmessageenriched.FlowMessage.DirectionType Direction = 90;
-  if (this->direction() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      90, this->direction(), output);
+  // uint32 EgressVrfID = 40;
+  if (this->egressvrfid() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(40, this->egressvrfid(), output);
   }
 
-  // uint32 Cid = 91;
+  // uint32 BiFlowDirection = 41;
+  if (this->biflowdirection() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(41, this->biflowdirection(), output);
+  }
+
+  // uint32 FlowDirection = 42;
+  if (this->flowdirection() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(42, this->flowdirection(), output);
+  }
+
+  // uint32 IPv6ExtensionHeaders = 43;
+  if (this->ipv6extensionheaders() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(43, this->ipv6extensionheaders(), output);
+  }
+
+  // uint32 Cid = 1000;
   if (this->cid() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(91, this->cid(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1000, this->cid(), output);
   }
 
-  // .flowmessageenriched.FlowMessage.NormalizedType Normalized = 92;
+  // string CidString = 1001;
+  if (this->cidstring().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->cidstring().data(), static_cast<int>(this->cidstring().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flowmessageenriched.FlowMessage.CidString");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1001, this->cidstring(), output);
+  }
+
+  // .flowmessageenriched.FlowMessage.NormalizedType Normalized = 1002;
   if (this->normalized() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      92, this->normalized(), output);
+      1002, this->normalized(), output);
   }
 
-  // string SrcIfName = 93;
+  // string SrcIfName = 1003;
   if (this->srcifname().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->srcifname().data(), static_cast<int>(this->srcifname().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flowmessageenriched.FlowMessage.SrcIfName");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      93, this->srcifname(), output);
+      1003, this->srcifname(), output);
   }
 
-  // string SrcIfDesc = 94;
+  // string SrcIfDesc = 1004;
   if (this->srcifdesc().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->srcifdesc().data(), static_cast<int>(this->srcifdesc().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flowmessageenriched.FlowMessage.SrcIfDesc");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      94, this->srcifdesc(), output);
+      1004, this->srcifdesc(), output);
   }
 
-  // uint32 SrcIfSpeed = 95;
+  // uint32 SrcIfSpeed = 1005;
   if (this->srcifspeed() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(95, this->srcifspeed(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1005, this->srcifspeed(), output);
   }
 
-  // string DstIfName = 96;
+  // string DstIfName = 1006;
   if (this->dstifname().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->dstifname().data(), static_cast<int>(this->dstifname().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flowmessageenriched.FlowMessage.DstIfName");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      96, this->dstifname(), output);
+      1006, this->dstifname(), output);
   }
 
-  // string DstIfDesc = 97;
+  // string DstIfDesc = 1007;
   if (this->dstifdesc().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->dstifdesc().data(), static_cast<int>(this->dstifdesc().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flowmessageenriched.FlowMessage.DstIfDesc");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      97, this->dstifdesc(), output);
+      1007, this->dstifdesc(), output);
   }
 
-  // uint32 DstIfSpeed = 98;
+  // uint32 DstIfSpeed = 1008;
   if (this->dstifspeed() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(98, this->dstifspeed(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1008, this->dstifspeed(), output);
   }
 
-  // string Peer = 99;
-  if (this->peer().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->peer().data(), static_cast<int>(this->peer().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flowmessageenriched.FlowMessage.Peer");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      99, this->peer(), output);
-  }
-
-  // string RemoteCountry = 100;
-  if (this->remotecountry().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->remotecountry().data(), static_cast<int>(this->remotecountry().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flowmessageenriched.FlowMessage.RemoteCountry");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      100, this->remotecountry(), output);
-  }
-
-  // string ProtoName = 101;
+  // string ProtoName = 1009;
   if (this->protoname().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->protoname().data(), static_cast<int>(this->protoname().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flowmessageenriched.FlowMessage.ProtoName");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      101, this->protoname(), output);
+      1009, this->protoname(), output);
+  }
+
+  // string RemoteCountry = 1010;
+  if (this->remotecountry().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->remotecountry().data(), static_cast<int>(this->remotecountry().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flowmessageenriched.FlowMessage.RemoteCountry");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1010, this->remotecountry(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2028,9 +1976,9 @@ void FlowMessage::SerializeWithCachedSizes(
       1, this->type(), target);
   }
 
-  // uint64 TimeRecvd = 2;
-  if (this->timerecvd() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->timerecvd(), target);
+  // uint64 TimeReceived = 2;
+  if (this->timereceived() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->timereceived(), target);
   }
 
   // uint64 SamplingRate = 3;
@@ -2043,29 +1991,23 @@ void FlowMessage::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->sequencenum(), target);
   }
 
-  // uint64 TimeFlow = 5;
-  if (this->timeflow() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->timeflow(), target);
+  // uint64 TimeFlowEnd = 5;
+  if (this->timeflowend() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->timeflowend(), target);
   }
 
-  // bytes SrcIP = 6;
-  if (this->srcip().size() > 0) {
+  // bytes SrcAddr = 6;
+  if (this->srcaddr().size() > 0) {
     target =
       ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        6, this->srcip(), target);
+        6, this->srcaddr(), target);
   }
 
-  // bytes DstIP = 7;
-  if (this->dstip().size() > 0) {
+  // bytes DstAddr = 7;
+  if (this->dstaddr().size() > 0) {
     target =
       ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        7, this->dstip(), target);
-  }
-
-  // .flowmessageenriched.FlowMessage.IPType IPversion = 8;
-  if (this->ipversion() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      8, this->ipversion(), target);
+        7, this->dstaddr(), target);
   }
 
   // uint64 Bytes = 9;
@@ -2078,11 +2020,11 @@ void FlowMessage::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(10, this->packets(), target);
   }
 
-  // bytes RouterAddr = 11;
-  if (this->routeraddr().size() > 0) {
+  // bytes SamplerAddress = 11;
+  if (this->sampleraddress().size() > 0) {
     target =
       ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        11, this->routeraddr(), target);
+        11, this->sampleraddress(), target);
   }
 
   // bytes NextHop = 12;
@@ -2217,44 +2159,59 @@ void FlowMessage::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(37, this->ipv6flowlabel(), target);
   }
 
-  // uint32 IngressVrfId = 38;
-  if (this->ingressvrfid() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(38, this->ingressvrfid(), target);
-  }
-
-  // uint32 EgressVrfId = 39;
-  if (this->egressvrfid() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(39, this->egressvrfid(), target);
-  }
-
-  // uint64 TimeFlowStart = 40;
+  // uint64 TimeFlowStart = 38;
   if (this->timeflowstart() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(40, this->timeflowstart(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(38, this->timeflowstart(), target);
   }
 
-  // uint64 TimeFlowEnd = 41;
-  if (this->timeflowend() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(41, this->timeflowend(), target);
+  // uint32 IngressVrfID = 39;
+  if (this->ingressvrfid() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(39, this->ingressvrfid(), target);
   }
 
-  // .flowmessageenriched.FlowMessage.DirectionType Direction = 90;
-  if (this->direction() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      90, this->direction(), target);
+  // uint32 EgressVrfID = 40;
+  if (this->egressvrfid() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(40, this->egressvrfid(), target);
   }
 
-  // uint32 Cid = 91;
+  // uint32 BiFlowDirection = 41;
+  if (this->biflowdirection() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(41, this->biflowdirection(), target);
+  }
+
+  // uint32 FlowDirection = 42;
+  if (this->flowdirection() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(42, this->flowdirection(), target);
+  }
+
+  // uint32 IPv6ExtensionHeaders = 43;
+  if (this->ipv6extensionheaders() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(43, this->ipv6extensionheaders(), target);
+  }
+
+  // uint32 Cid = 1000;
   if (this->cid() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(91, this->cid(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1000, this->cid(), target);
   }
 
-  // .flowmessageenriched.FlowMessage.NormalizedType Normalized = 92;
+  // string CidString = 1001;
+  if (this->cidstring().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->cidstring().data(), static_cast<int>(this->cidstring().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flowmessageenriched.FlowMessage.CidString");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1001, this->cidstring(), target);
+  }
+
+  // .flowmessageenriched.FlowMessage.NormalizedType Normalized = 1002;
   if (this->normalized() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      92, this->normalized(), target);
+      1002, this->normalized(), target);
   }
 
-  // string SrcIfName = 93;
+  // string SrcIfName = 1003;
   if (this->srcifname().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->srcifname().data(), static_cast<int>(this->srcifname().length()),
@@ -2262,10 +2219,10 @@ void FlowMessage::SerializeWithCachedSizes(
       "flowmessageenriched.FlowMessage.SrcIfName");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        93, this->srcifname(), target);
+        1003, this->srcifname(), target);
   }
 
-  // string SrcIfDesc = 94;
+  // string SrcIfDesc = 1004;
   if (this->srcifdesc().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->srcifdesc().data(), static_cast<int>(this->srcifdesc().length()),
@@ -2273,15 +2230,15 @@ void FlowMessage::SerializeWithCachedSizes(
       "flowmessageenriched.FlowMessage.SrcIfDesc");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        94, this->srcifdesc(), target);
+        1004, this->srcifdesc(), target);
   }
 
-  // uint32 SrcIfSpeed = 95;
+  // uint32 SrcIfSpeed = 1005;
   if (this->srcifspeed() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(95, this->srcifspeed(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1005, this->srcifspeed(), target);
   }
 
-  // string DstIfName = 96;
+  // string DstIfName = 1006;
   if (this->dstifname().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->dstifname().data(), static_cast<int>(this->dstifname().length()),
@@ -2289,10 +2246,10 @@ void FlowMessage::SerializeWithCachedSizes(
       "flowmessageenriched.FlowMessage.DstIfName");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        96, this->dstifname(), target);
+        1006, this->dstifname(), target);
   }
 
-  // string DstIfDesc = 97;
+  // string DstIfDesc = 1007;
   if (this->dstifdesc().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->dstifdesc().data(), static_cast<int>(this->dstifdesc().length()),
@@ -2300,37 +2257,15 @@ void FlowMessage::SerializeWithCachedSizes(
       "flowmessageenriched.FlowMessage.DstIfDesc");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        97, this->dstifdesc(), target);
+        1007, this->dstifdesc(), target);
   }
 
-  // uint32 DstIfSpeed = 98;
+  // uint32 DstIfSpeed = 1008;
   if (this->dstifspeed() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(98, this->dstifspeed(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1008, this->dstifspeed(), target);
   }
 
-  // string Peer = 99;
-  if (this->peer().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->peer().data(), static_cast<int>(this->peer().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flowmessageenriched.FlowMessage.Peer");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        99, this->peer(), target);
-  }
-
-  // string RemoteCountry = 100;
-  if (this->remotecountry().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->remotecountry().data(), static_cast<int>(this->remotecountry().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flowmessageenriched.FlowMessage.RemoteCountry");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        100, this->remotecountry(), target);
-  }
-
-  // string ProtoName = 101;
+  // string ProtoName = 1009;
   if (this->protoname().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->protoname().data(), static_cast<int>(this->protoname().length()),
@@ -2338,7 +2273,18 @@ void FlowMessage::SerializeWithCachedSizes(
       "flowmessageenriched.FlowMessage.ProtoName");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        101, this->protoname(), target);
+        1009, this->protoname(), target);
+  }
+
+  // string RemoteCountry = 1010;
+  if (this->remotecountry().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->remotecountry().data(), static_cast<int>(this->remotecountry().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flowmessageenriched.FlowMessage.RemoteCountry");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1010, this->remotecountry(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2362,25 +2308,25 @@ size_t FlowMessage::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes SrcIP = 6;
-  if (this->srcip().size() > 0) {
+  // bytes SrcAddr = 6;
+  if (this->srcaddr().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->srcip());
+        this->srcaddr());
   }
 
-  // bytes DstIP = 7;
-  if (this->dstip().size() > 0) {
+  // bytes DstAddr = 7;
+  if (this->dstaddr().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->dstip());
+        this->dstaddr());
   }
 
-  // bytes RouterAddr = 11;
-  if (this->routeraddr().size() > 0) {
+  // bytes SamplerAddress = 11;
+  if (this->sampleraddress().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->routeraddr());
+        this->sampleraddress());
   }
 
   // bytes NextHop = 12;
@@ -2390,60 +2336,60 @@ size_t FlowMessage::ByteSizeLong() const {
         this->nexthop());
   }
 
-  // string SrcIfName = 93;
+  // string CidString = 1001;
+  if (this->cidstring().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->cidstring());
+  }
+
+  // string SrcIfName = 1003;
   if (this->srcifname().size() > 0) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->srcifname());
   }
 
-  // string SrcIfDesc = 94;
+  // string SrcIfDesc = 1004;
   if (this->srcifdesc().size() > 0) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->srcifdesc());
   }
 
-  // string DstIfName = 96;
+  // string DstIfName = 1006;
   if (this->dstifname().size() > 0) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->dstifname());
   }
 
-  // string DstIfDesc = 97;
+  // string DstIfDesc = 1007;
   if (this->dstifdesc().size() > 0) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->dstifdesc());
   }
 
-  // string Peer = 99;
-  if (this->peer().size() > 0) {
-    total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->peer());
-  }
-
-  // string RemoteCountry = 100;
-  if (this->remotecountry().size() > 0) {
-    total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->remotecountry());
-  }
-
-  // string ProtoName = 101;
+  // string ProtoName = 1009;
   if (this->protoname().size() > 0) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->protoname());
   }
 
-  // uint64 TimeRecvd = 2;
-  if (this->timerecvd() != 0) {
+  // string RemoteCountry = 1010;
+  if (this->remotecountry().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->remotecountry());
+  }
+
+  // uint64 TimeReceived = 2;
+  if (this->timereceived() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->timerecvd());
+        this->timereceived());
   }
 
   // .flowmessageenriched.FlowMessage.FlowType Type = 1;
@@ -2466,11 +2412,11 @@ size_t FlowMessage::ByteSizeLong() const {
         this->samplingrate());
   }
 
-  // uint64 TimeFlow = 5;
-  if (this->timeflow() != 0) {
+  // uint64 TimeFlowEnd = 5;
+  if (this->timeflowend() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->timeflow());
+        this->timeflowend());
   }
 
   // uint64 Bytes = 9;
@@ -2485,12 +2431,6 @@ size_t FlowMessage::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
         this->packets());
-  }
-
-  // .flowmessageenriched.FlowMessage.IPType IPversion = 8;
-  if (this->ipversion() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->ipversion());
   }
 
   // uint32 NextHopAS = 13;
@@ -2584,13 +2524,6 @@ size_t FlowMessage::ByteSizeLong() const {
         this->ipttl());
   }
 
-  // uint64 SrcMac = 27;
-  if (this->srcmac() != 0) {
-    total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->srcmac());
-  }
-
   // uint32 TCPFlags = 26;
   if (this->tcpflags() != 0) {
     total_size += 2 +
@@ -2598,11 +2531,11 @@ size_t FlowMessage::ByteSizeLong() const {
         this->tcpflags());
   }
 
-  // uint32 VlanId = 29;
-  if (this->vlanid() != 0) {
+  // uint64 SrcMac = 27;
+  if (this->srcmac() != 0) {
     total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->vlanid());
+      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+        this->srcmac());
   }
 
   // uint64 DstMac = 28;
@@ -2610,6 +2543,13 @@ size_t FlowMessage::ByteSizeLong() const {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
         this->dstmac());
+  }
+
+  // uint32 VlanId = 29;
+  if (this->vlanid() != 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->vlanid());
   }
 
   // uint32 Etype = 30;
@@ -2661,6 +2601,13 @@ size_t FlowMessage::ByteSizeLong() const {
         this->fragmentoffset());
   }
 
+  // uint64 TimeFlowStart = 38;
+  if (this->timeflowstart() != 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+        this->timeflowstart());
+  }
+
   // uint32 IPv6FlowLabel = 37;
   if (this->ipv6flowlabel() != 0) {
     total_size += 2 +
@@ -2668,65 +2615,66 @@ size_t FlowMessage::ByteSizeLong() const {
         this->ipv6flowlabel());
   }
 
-  // uint32 IngressVrfId = 38;
+  // uint32 IngressVrfID = 39;
   if (this->ingressvrfid() != 0) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::UInt32Size(
         this->ingressvrfid());
   }
 
-  // uint32 EgressVrfId = 39;
+  // uint32 EgressVrfID = 40;
   if (this->egressvrfid() != 0) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::UInt32Size(
         this->egressvrfid());
   }
 
-  // uint64 TimeFlowStart = 40;
-  if (this->timeflowstart() != 0) {
-    total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->timeflowstart());
-  }
-
-  // uint64 TimeFlowEnd = 41;
-  if (this->timeflowend() != 0) {
-    total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->timeflowend());
-  }
-
-  // uint32 DstIfSpeed = 98;
-  if (this->dstifspeed() != 0) {
+  // uint32 BiFlowDirection = 41;
+  if (this->biflowdirection() != 0) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->dstifspeed());
+        this->biflowdirection());
   }
 
-  // .flowmessageenriched.FlowMessage.DirectionType Direction = 90;
-  if (this->direction() != 0) {
+  // uint32 FlowDirection = 42;
+  if (this->flowdirection() != 0) {
     total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->direction());
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->flowdirection());
   }
 
-  // uint32 Cid = 91;
+  // uint32 IPv6ExtensionHeaders = 43;
+  if (this->ipv6extensionheaders() != 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->ipv6extensionheaders());
+  }
+
+  // uint32 Cid = 1000;
   if (this->cid() != 0) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::UInt32Size(
         this->cid());
   }
 
-  // .flowmessageenriched.FlowMessage.NormalizedType Normalized = 92;
+  // .flowmessageenriched.FlowMessage.NormalizedType Normalized = 1002;
   if (this->normalized() != 0) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->normalized());
   }
 
-  // uint32 SrcIfSpeed = 95;
+  // uint32 SrcIfSpeed = 1005;
   if (this->srcifspeed() != 0) {
     total_size += 2 +
       ::google::protobuf::internal::WireFormatLite::UInt32Size(
         this->srcifspeed());
+  }
+
+  // uint32 DstIfSpeed = 1008;
+  if (this->dstifspeed() != 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->dstifspeed());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -2756,21 +2704,25 @@ void FlowMessage::MergeFrom(const FlowMessage& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.srcip().size() > 0) {
+  if (from.srcaddr().size() > 0) {
 
-    srcip_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.srcip_);
+    srcaddr_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.srcaddr_);
   }
-  if (from.dstip().size() > 0) {
+  if (from.dstaddr().size() > 0) {
 
-    dstip_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dstip_);
+    dstaddr_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dstaddr_);
   }
-  if (from.routeraddr().size() > 0) {
+  if (from.sampleraddress().size() > 0) {
 
-    routeraddr_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.routeraddr_);
+    sampleraddress_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sampleraddress_);
   }
   if (from.nexthop().size() > 0) {
 
     nexthop_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nexthop_);
+  }
+  if (from.cidstring().size() > 0) {
+
+    cidstring_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cidstring_);
   }
   if (from.srcifname().size() > 0) {
 
@@ -2788,20 +2740,16 @@ void FlowMessage::MergeFrom(const FlowMessage& from) {
 
     dstifdesc_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dstifdesc_);
   }
-  if (from.peer().size() > 0) {
+  if (from.protoname().size() > 0) {
 
-    peer_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.peer_);
+    protoname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.protoname_);
   }
   if (from.remotecountry().size() > 0) {
 
     remotecountry_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.remotecountry_);
   }
-  if (from.protoname().size() > 0) {
-
-    protoname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.protoname_);
-  }
-  if (from.timerecvd() != 0) {
-    set_timerecvd(from.timerecvd());
+  if (from.timereceived() != 0) {
+    set_timereceived(from.timereceived());
   }
   if (from.type() != 0) {
     set_type(from.type());
@@ -2812,17 +2760,14 @@ void FlowMessage::MergeFrom(const FlowMessage& from) {
   if (from.samplingrate() != 0) {
     set_samplingrate(from.samplingrate());
   }
-  if (from.timeflow() != 0) {
-    set_timeflow(from.timeflow());
+  if (from.timeflowend() != 0) {
+    set_timeflowend(from.timeflowend());
   }
   if (from.bytes() != 0) {
     set_bytes(from.bytes());
   }
   if (from.packets() != 0) {
     set_packets(from.packets());
-  }
-  if (from.ipversion() != 0) {
-    set_ipversion(from.ipversion());
   }
   if (from.nexthopas() != 0) {
     set_nexthopas(from.nexthopas());
@@ -2863,17 +2808,17 @@ void FlowMessage::MergeFrom(const FlowMessage& from) {
   if (from.ipttl() != 0) {
     set_ipttl(from.ipttl());
   }
-  if (from.srcmac() != 0) {
-    set_srcmac(from.srcmac());
-  }
   if (from.tcpflags() != 0) {
     set_tcpflags(from.tcpflags());
   }
-  if (from.vlanid() != 0) {
-    set_vlanid(from.vlanid());
+  if (from.srcmac() != 0) {
+    set_srcmac(from.srcmac());
   }
   if (from.dstmac() != 0) {
     set_dstmac(from.dstmac());
+  }
+  if (from.vlanid() != 0) {
+    set_vlanid(from.vlanid());
   }
   if (from.etype() != 0) {
     set_etype(from.etype());
@@ -2896,6 +2841,9 @@ void FlowMessage::MergeFrom(const FlowMessage& from) {
   if (from.fragmentoffset() != 0) {
     set_fragmentoffset(from.fragmentoffset());
   }
+  if (from.timeflowstart() != 0) {
+    set_timeflowstart(from.timeflowstart());
+  }
   if (from.ipv6flowlabel() != 0) {
     set_ipv6flowlabel(from.ipv6flowlabel());
   }
@@ -2905,17 +2853,14 @@ void FlowMessage::MergeFrom(const FlowMessage& from) {
   if (from.egressvrfid() != 0) {
     set_egressvrfid(from.egressvrfid());
   }
-  if (from.timeflowstart() != 0) {
-    set_timeflowstart(from.timeflowstart());
+  if (from.biflowdirection() != 0) {
+    set_biflowdirection(from.biflowdirection());
   }
-  if (from.timeflowend() != 0) {
-    set_timeflowend(from.timeflowend());
+  if (from.flowdirection() != 0) {
+    set_flowdirection(from.flowdirection());
   }
-  if (from.dstifspeed() != 0) {
-    set_dstifspeed(from.dstifspeed());
-  }
-  if (from.direction() != 0) {
-    set_direction(from.direction());
+  if (from.ipv6extensionheaders() != 0) {
+    set_ipv6extensionheaders(from.ipv6extensionheaders());
   }
   if (from.cid() != 0) {
     set_cid(from.cid());
@@ -2925,6 +2870,9 @@ void FlowMessage::MergeFrom(const FlowMessage& from) {
   }
   if (from.srcifspeed() != 0) {
     set_srcifspeed(from.srcifspeed());
+  }
+  if (from.dstifspeed() != 0) {
+    set_dstifspeed(from.dstifspeed());
   }
 }
 
@@ -2953,13 +2901,15 @@ void FlowMessage::Swap(FlowMessage* other) {
 void FlowMessage::InternalSwap(FlowMessage* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  srcip_.Swap(&other->srcip_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  srcaddr_.Swap(&other->srcaddr_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  dstip_.Swap(&other->dstip_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  dstaddr_.Swap(&other->dstaddr_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  routeraddr_.Swap(&other->routeraddr_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  sampleraddress_.Swap(&other->sampleraddress_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   nexthop_.Swap(&other->nexthop_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  cidstring_.Swap(&other->cidstring_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   srcifname_.Swap(&other->srcifname_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
@@ -2969,20 +2919,17 @@ void FlowMessage::InternalSwap(FlowMessage* other) {
     GetArenaNoVirtual());
   dstifdesc_.Swap(&other->dstifdesc_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  peer_.Swap(&other->peer_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  protoname_.Swap(&other->protoname_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   remotecountry_.Swap(&other->remotecountry_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  protoname_.Swap(&other->protoname_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(timerecvd_, other->timerecvd_);
+  swap(timereceived_, other->timereceived_);
   swap(type_, other->type_);
   swap(sequencenum_, other->sequencenum_);
   swap(samplingrate_, other->samplingrate_);
-  swap(timeflow_, other->timeflow_);
+  swap(timeflowend_, other->timeflowend_);
   swap(bytes_, other->bytes_);
   swap(packets_, other->packets_);
-  swap(ipversion_, other->ipversion_);
   swap(nexthopas_, other->nexthopas_);
   swap(srcas_, other->srcas_);
   swap(dstas_, other->dstas_);
@@ -2996,10 +2943,10 @@ void FlowMessage::InternalSwap(FlowMessage* other) {
   swap(iptos_, other->iptos_);
   swap(forwardingstatus_, other->forwardingstatus_);
   swap(ipttl_, other->ipttl_);
-  swap(srcmac_, other->srcmac_);
   swap(tcpflags_, other->tcpflags_);
-  swap(vlanid_, other->vlanid_);
+  swap(srcmac_, other->srcmac_);
   swap(dstmac_, other->dstmac_);
+  swap(vlanid_, other->vlanid_);
   swap(etype_, other->etype_);
   swap(icmptype_, other->icmptype_);
   swap(icmpcode_, other->icmpcode_);
@@ -3007,16 +2954,17 @@ void FlowMessage::InternalSwap(FlowMessage* other) {
   swap(dstvlan_, other->dstvlan_);
   swap(fragmentid_, other->fragmentid_);
   swap(fragmentoffset_, other->fragmentoffset_);
+  swap(timeflowstart_, other->timeflowstart_);
   swap(ipv6flowlabel_, other->ipv6flowlabel_);
   swap(ingressvrfid_, other->ingressvrfid_);
   swap(egressvrfid_, other->egressvrfid_);
-  swap(timeflowstart_, other->timeflowstart_);
-  swap(timeflowend_, other->timeflowend_);
-  swap(dstifspeed_, other->dstifspeed_);
-  swap(direction_, other->direction_);
+  swap(biflowdirection_, other->biflowdirection_);
+  swap(flowdirection_, other->flowdirection_);
+  swap(ipv6extensionheaders_, other->ipv6extensionheaders_);
   swap(cid_, other->cid_);
   swap(normalized_, other->normalized_);
   swap(srcifspeed_, other->srcifspeed_);
+  swap(dstifspeed_, other->dstifspeed_);
 }
 
 ::google::protobuf::Metadata FlowMessage::GetMetadata() const {

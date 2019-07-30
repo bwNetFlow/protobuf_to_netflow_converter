@@ -23,7 +23,7 @@ user_credentials
     std::string brokers;
     std::string iface_name;
     std::string dst_ip;
-    std::string dst_port;
+    uint16_t dst_port;
     std::string anonymization;
 };
 

@@ -6,6 +6,13 @@
 
 /* --- TODO: Check if constructor parameters are reasonable --- */
 
+/*
+class NewRebalanceCb : public RdKafka::RebalanceCb {
+    public:
+        void rebalance_cb (RdKafka::KafkaConsumer *consumer, RdKafka::ErrorCode err, std::vector<RdKafka::TopicPartition*> &partitions);
+}
+*/
+
 class Consumer
 {
     public:
