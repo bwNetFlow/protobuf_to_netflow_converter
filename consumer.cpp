@@ -98,35 +98,14 @@ Consumer::add_topics(const std::vector<std::string>& input)
 
 int
 Consumer::subscribe()
-{
-    /* EXPERIMENTAL */
-    /*
-    int64_t low, high;
-    RdKafka::HandleImpl exp{};
-    exp.get_watermark_offsets("flow-messages-enriched", 0, &low, &high);
-    std::cout << "LOW: " << low << "; HIGH: " << high << std::endl;
-
-    std::vector<RdKafka::TopicPartition*> partitions;
-    partitions.push_back(RdKafka::TopicPartition::create("flow-messages-enriched", 0, RdKafka::Topic::OFFSET_END));
-    partitions.push_back(RdKafka::TopicPartition::create("flow-messages-enriched", 1, RdKafka::Topic::OFFSET_END));
-    partitions.push_back(RdKafka::TopicPartition::create("flow-messages-enriched", 2, RdKafka::Topic::OFFSET_END));
-    */
-    /* END EXPERIMENTAL */
-    
-    
+{    
     RdKafka::ErrorCode err = consumer->subscribe(topics);
     if(err) {
         std::cerr << "Failed to subscribe to " << topics.size() << " topics: "
             << RdKafka::err2str(err) << std::endl;
         return -1;
     }
-    
-    /*
-    consumer->unassign();
 
-    consumer->assign(partitions);
-    consumer->commitAsync();
-    */
     return 0;
 }
 
@@ -143,6 +122,13 @@ Consumer::close()
     consumer->close();
     return 0;
 }
+
+/* --- Example for creating TopicPartitions that are used in rebalance_cb ---
+    std::vector<RdKafka::TopicPartition*> partitions;
+    partitions.push_back(RdKafka::TopicPartition::create("flow-messages-enriched", 0, RdKafka::Topic::OFFSET_END));
+    partitions.push_back(RdKafka::TopicPartition::create("flow-messages-enriched", 1, RdKafka::Topic::OFFSET_END));
+    partitions.push_back(RdKafka::TopicPartition::create("flow-messages-enriched", 2, RdKafka::Topic::OFFSET_END));
+*/
 
 void 
 Consumer::CRebalanceCb::rebalance_cb (RdKafka::KafkaConsumer *consumer, RdKafka::ErrorCode err,
