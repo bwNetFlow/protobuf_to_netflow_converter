@@ -235,14 +235,15 @@ add_timediff()
     timeinfo = localtime(&rawtime);
     strftime(buffer, sizeof(buffer), "%Z", timeinfo);
     
-    if(strcmp(buffer, "CEST") >= 0) return 7200000;
-    else if(strcmp(buffer, "CES") >= 0) return 3600000;
+    if(strcmp(buffer, "CEST") == 0) return 7200000;
+    else if(strcmp(buffer, "CET") == 0) return 3600000;
     else return 0;
 }
 
 uint32_t
 calc_sysUptime()
 {
+    /*
     std::chrono::milliseconds uptime(0u);
     double uptime_seconds;
     if(std::ifstream("/proc/uptime", std::ios::in) >> uptime_seconds) {
@@ -250,6 +251,10 @@ calc_sysUptime()
     }
 
     return uptime.count();
+    */
+    uint32_t uptime_seconds;
+    std::ifstream("/proc/uptime", std::ios::in) >> uptime_seconds;
+    return uptime_seconds*1000;
 }
 
 
@@ -280,8 +285,10 @@ read_kafka_input(flowmessageenriched::FlowMessage& flowmsg, kafka_input& kafka_v
     kafka_values.OutputSNMP = flowmsg.dstif();
     //kafka_values.LastSwitched = flowmsg.timeflowend() + calc_sysUptime() - flowmsg.timereceived() * 1000;
     kafka_values.LastSwitched = (flowmsg.timeflowend() * 1000 - std::time(0) * 1000 + calc_sysUptime()) + add_timediff();
+    //kafka_values.LastSwitched = (flowmsg.timeflowend() * 1000 - std::time(0) * 1000 + calc_sysUptime()); 
     //kafka_values.FirstSwitched = flowmsg.timeflowstart() + calc_sysUptime() - flowmsg.timereceived() * 1000;
     kafka_values.FirstSwitched = (flowmsg.timeflowstart() * 1000 - std::time(0) * 1000 + calc_sysUptime()) + add_timediff();
+    //kafka_values.FirstSwitched = (flowmsg.timeflowstart() * 1000 - std::time(0) * 1000 + calc_sysUptime());
     kafka_values.L4SrcPort = flowmsg.srcport();
     kafka_values.L4DstPort = flowmsg.dstport();
     kafka_values.SrcAS = flowmsg.srcas();
@@ -312,8 +319,10 @@ read_kafka_input_v6(flowmessageenriched::FlowMessage& flowmsg, kafka_input_v6& k
     kafka_values.OutputSNMP = flowmsg.dstif();
     //kafka_values.FirstSwitched = flowmsg.timeflowstart() + calc_sysUptime() - flowmsg.timereceived() * 1000;
     kafka_values.FirstSwitched = (flowmsg.timeflowstart() * 1000 - std::time(0) * 1000 + calc_sysUptime()) + add_timediff();
+    //kafka_values.FirstSwitched = (flowmsg.timeflowstart() * 1000 - std::time(0) * 1000 + calc_sysUptime());
     //kafka_values.LastSwitched = flowmsg.timeflowend() + calc_sysUptime() - flowmsg.timereceived() * 1000;
     kafka_values.LastSwitched = (flowmsg.timeflowend() * 1000 - std::time(0) * 1000 + calc_sysUptime()) + add_timediff();
+    //kafka_values.LastSwitched = (flowmsg.timeflowend() * 1000 - std::time(0) * 1000 + calc_sysUptime());
     kafka_values.FlowLabel = flowmsg.ipv6flowlabel();
     kafka_values.IP6OptionHeaders = 0x00000000; // Not yet supported by goflow SHAME
     kafka_values.L4SrcPort = flowmsg.srcport();
@@ -529,6 +538,8 @@ flow_writer(user_credentials const& usr_cds, std::unordered_map<std::string, Net
                 }
  
                 sin.sin_addr.s_addr = ip_hdr.ip_dst.s_addr;
+                it.second.set_sysUptime(calc_sysUptime());
+                it.second.set_unixSeconds(std::time(0));
                 sendto (sd, packet, IP4_HDRLEN + UDP_HDRLEN + it.second.get_packet_size(), 0, (struct sockaddr *) &sin, sizeof (struct sockaddr));
                 free(packet);
                 it.second.set_packageSequence(it.second.get_packageSequence() +1);
@@ -566,6 +577,8 @@ flow_writer_v6(user_credentials const& usr_cds, std::unordered_map<std::string, 
                 }
  
                 sin.sin_addr.s_addr = ip_hdr.ip_dst.s_addr;
+                it.second.set_sysUptime(calc_sysUptime());
+                it.second.set_unixSeconds(std::time(0));
                 sendto (sd, packet, IP4_HDRLEN + UDP_HDRLEN + it.second.get_packet_size(), 0, (struct sockaddr *) &sin, sizeof (struct sockaddr));
                 free(packet);
                 it.second.set_packageSequence(it.second.get_packageSequence() +1);

@@ -50,6 +50,8 @@ class NetFlowBuilder
             uint32_t _IngressVRFID, uint32_t _EgressVRFID);
 
         void set_packageSequence(uint32_t);
+        void set_sysUptime(uint32_t);
+        void set_unixSeconds(uint32_t);
 
         void clear_filllevel();
 
@@ -217,6 +219,8 @@ class NetFlowBuilderv6
             uint8_t _Direction, uint8_t _ForwardingStatus, uint16_t _FlowSamplerID, uint32_t _IngressVRFID, uint32_t _EgressVRFID);
 
         void set_packageSequence(uint32_t);
+        void set_sysUptime(uint32_t);
+        void set_unixSeconds(uint32_t);
 
         void clear_filllevel();
 

@@ -202,6 +202,25 @@ NetFlowBuilder::set_packageSequence(uint32_t new_value)
     }
 }
 
+void
+NetFlowBuilder::set_sysUptime(uint32_t new_value)
+{
+    if(!header_ptr) ;
+    else {
+        uint32_t tmp_new = htonl(new_value);
+        memcpy((char*)header_ptr+2*sizeof(uint16_t), &tmp_new, sizeof(uint32_t));
+    }
+}
+
+void
+NetFlowBuilder::set_unixSeconds(uint32_t new_value)
+{
+    if(!header_ptr) ;
+    else {
+        uint32_t tmp_new = htonl(new_value);
+        memcpy((char*)header_ptr+2*sizeof(uint16_t)+1*sizeof(uint32_t), &tmp_new, sizeof(uint32_t));
+    }
+}
 
 void
 NetFlowBuilder::clear_filllevel()
@@ -488,6 +507,26 @@ NetFlowBuilderv6::set_packageSequence(uint32_t new_value)
     else {
         uint32_t tmp_new = htonl(new_value);
         memcpy((char*)header_ptr+2*sizeof(uint16_t)+2*sizeof(uint32_t), &tmp_new, sizeof(uint32_t));
+    }
+}
+
+void
+NetFlowBuilderv6::set_sysUptime(uint32_t new_value)
+{
+    if(!header_ptr) ;
+    else {
+        uint32_t tmp_new = htonl(new_value);
+        memcpy((char*)header_ptr+2*sizeof(uint16_t), &tmp_new, sizeof(uint32_t));
+    }
+}
+
+void
+NetFlowBuilderv6::set_unixSeconds(uint32_t new_value)
+{
+    if(!header_ptr) ;
+    else {
+        uint32_t tmp_new = htonl(new_value);
+        memcpy((char*)header_ptr+2*sizeof(uint16_t)+1*sizeof(uint32_t), &tmp_new, sizeof(uint32_t));
     }
 }
 
